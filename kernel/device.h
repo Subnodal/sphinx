@@ -40,7 +40,6 @@ namespace kernel {
         private:
             std::vector<std::shared_ptr<Device>> _entries;
             std::shared_ptr<Device> _boot_console;
-
     };
 }
 
