@@ -6,20 +6,20 @@
 #include <memory>
 #include <stdexcept>
 
+#include "stream.h"
+
 namespace kernel {
     class DeviceError : public std::runtime_error {
         public:
             DeviceError(const std::string& what);
     };
 
-    class Device {
+    class Device : public Stream {
         public:
             Device(std::string name);
 
             std::string get_name();
 
-            virtual std::vector<char> read(size_t count) = 0;
-            virtual void write(std::vector<char> data) = 0;
             virtual bool is_available() = 0;
 
         private:
