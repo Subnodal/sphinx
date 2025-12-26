@@ -7,4 +7,10 @@ void Sphinx::boot() {
     std::shared_ptr<Device> console = devices.get_boot_console();
 
     console->println("Hello, world!");
+
+    console->write(console->read(1));
+}
+
+void Sphinx::step() {
+    schedulers.get(0)->step();
 }

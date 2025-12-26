@@ -25,3 +25,21 @@ void Scheduler::step() {
         process->_step();
     }
 }
+
+void Schedulers::add(std::shared_ptr<Scheduler> scheduler) {
+    _schedulers.push_back(scheduler);
+}
+
+std::shared_ptr<Scheduler> Schedulers::get(size_t index) {
+    std::shared_ptr<Scheduler> scheduler;
+
+    if (index < _schedulers.size()) {
+        scheduler = _schedulers[index];
+    } else {
+        scheduler = std::make_shared<Scheduler>();
+
+        add(scheduler);
+    }
+
+    return scheduler;
+}

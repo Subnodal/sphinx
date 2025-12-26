@@ -12,6 +12,9 @@ namespace posix {
             void write(const std::vector<char> data) override;
             bool is_available() override;
     };
+
+    void enter_term_mode();
+    void exit_term_mode();
 }
 
 #endif

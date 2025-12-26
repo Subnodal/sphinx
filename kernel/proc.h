@@ -32,6 +32,16 @@ namespace kernel {
             std::vector<std::shared_ptr<Process>> _processes;
             size_t _next_pid = 0;
     };
+
+    class Schedulers {
+        public:
+            void add(std::shared_ptr<Scheduler> scheduler);
+
+            std::shared_ptr<Scheduler> get(size_t index);
+
+        private:
+            std::vector<std::shared_ptr<Scheduler>> _schedulers;
+    };
 }
 
 #endif

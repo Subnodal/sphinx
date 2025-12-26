@@ -5,7 +5,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build)
 
 file(GLOB SOURCES
     ${CMAKE_SOURCE_DIR}/kernel/*.cpp
-    targets/posix/*.cpp
+    ${CMAKE_SOURCE_DIR}/targets/posix/*.cpp
 )
 
 add_executable(sphinx ${SOURCES})
