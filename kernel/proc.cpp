@@ -56,7 +56,9 @@ void Scheduler::add_process(std::shared_ptr<Process> process) {
 
 void Scheduler::step() {
     for (std::shared_ptr<Process> process : _processes) {
-        process->_step();
+        if (process->_state == ProcessState::RUNNING) {
+            process->_step();
+        }
     }
 }
 
