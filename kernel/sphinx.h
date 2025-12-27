@@ -3,12 +3,14 @@
 
 #include "device.h"
 #include "proc.h"
+#include "fs.h"
 
 namespace kernel {
     class Sphinx {
         public:
             Devices devices;
             Schedulers schedulers;
+            FilesystemTable filesystem_table;
 
             void boot();
     };

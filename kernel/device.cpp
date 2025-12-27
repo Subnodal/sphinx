@@ -7,11 +7,10 @@ using namespace kernel;
 DeviceError::DeviceError(const std::string& what = "")
 : std::runtime_error(what) {}
 
-Device::Device(std::string name) {
-    _name = name;
-}
+Device::Device(const std::string name)
+: _name(name) {}
 
-std::string Device::get_name() {
+const std::string Device::get_name() {
     return _name;
 }
 

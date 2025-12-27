@@ -16,14 +16,14 @@ namespace kernel {
 
     class Device : public Stream {
         public:
-            Device(std::string name);
+            Device(const std::string name);
 
-            std::string get_name();
+            const std::string get_name();
 
             virtual bool is_available() = 0;
 
         private:
-            std::string _name;
+            const std::string _name;
     };
 
     class Devices {

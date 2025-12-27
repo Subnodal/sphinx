@@ -5,21 +5,20 @@ using namespace kernel;
 ProcessError::ProcessError(const std::string& what = "")
 : std::runtime_error(what) {}
 
-Process::Process(std::string name) {
-    _name = name;
-    _argv = std::make_shared<argv_t>();
-    _env = std::make_shared<env_t>();
-}
+Process::Process(std::string name)
+: _name(name)
+, _argv(std::make_shared<argv_t>())
+, _env(std::make_shared<env_t>()) {}
 
 ProcessState Process::get_state() {
     return _state;
 }
 
-size_t Process::get_pid() {
+const kernel::pid_t Process::get_pid() {
     return _pid;
 }
 
-std::string Process::get_name() {
+const std::string Process::get_name() {
     return _name;
 }
 
