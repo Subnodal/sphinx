@@ -54,28 +54,26 @@ void Scheduler::add_process(std::shared_ptr<Process> process) {
     _processes.push_back(process);
 }
 
-void Scheduler::step() {
+bool Scheduler::step() {
+    bool any_process_run = false;
+
     for (std::shared_ptr<Process> process : _processes) {
         if (process->_state == ProcessState::RUNNING) {
-            process->_step();
+            any_process_run = true;
+
+            if (!process->_step()) {
+                process->_state = ProcessState::ZOMBIE;
+            }
         }
     }
+
+    return any_process_run;
 }
 
 void Schedulers::add(std::shared_ptr<Scheduler> scheduler) {
     _schedulers.push_back(scheduler);
 }
 
-std::shared_ptr<Scheduler> Schedulers::get(size_t index) {
-    std::shared_ptr<Scheduler> scheduler;
-
-    if (index < _schedulers.size()) {
-        scheduler = _schedulers[index];
-    } else {
-        scheduler = std::make_shared<Scheduler>();
-
-        add(scheduler);
-    }
-
-    return scheduler;
+std::shared_ptr<Scheduler> Schedulers::operator[](size_t index) {
+    return _schedulers[index];
 }

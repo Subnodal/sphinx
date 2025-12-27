@@ -8,7 +8,3 @@ void Sphinx::boot() {
 
     console->println("Hello, world!");
 }
-
-void Sphinx::step() {
-    schedulers.get(0)->step();
-}

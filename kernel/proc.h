@@ -44,14 +44,14 @@ namespace kernel {
             std::shared_ptr<argv_t> _argv;
             std::shared_ptr<env_t> _env;
 
-            virtual void _step() = 0;
+            virtual bool _step() = 0;
     };
 
     class Scheduler {
         public:
             void add_process(std::shared_ptr<Process> process);
 
-            void step();
+            bool step();
 
         private:
             std::vector<std::shared_ptr<Process>> _processes;
@@ -62,7 +62,7 @@ namespace kernel {
         public:
             void add(std::shared_ptr<Scheduler> scheduler);
 
-            std::shared_ptr<Scheduler> get(size_t index);
+            std::shared_ptr<Scheduler> operator[](size_t index);
 
         private:
             std::vector<std::shared_ptr<Scheduler>> _schedulers;

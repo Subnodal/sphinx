@@ -11,7 +11,6 @@ namespace kernel {
             Schedulers schedulers;
 
             void boot();
-            void step();
     };
 }
 
