@@ -1,7 +1,7 @@
 #ifndef POSIX_TERM_H_
 #define POSIX_TERM_H_
 
-#include "../../kernel/device.h"
+#include "kernel/device.h"
 
 namespace posix {
     class StandardTerminal : public kernel::Device {
