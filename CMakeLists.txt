@@ -11,3 +11,4 @@ file(GLOB SOURCES kernel/*.cpp)
 target_sources(sphinx PRIVATE ${SOURCES})
 
 add_subdirectory(targets/posix)
+add_subdirectory(fs/bifs)
