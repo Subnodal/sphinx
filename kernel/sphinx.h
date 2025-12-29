@@ -4,6 +4,7 @@
 #include "device.h"
 #include "proc.h"
 #include "fs.h"
+#include "exec.h"
 
 namespace kernel {
     class Sphinx {
@@ -11,6 +12,7 @@ namespace kernel {
             Devices devices;
             Schedulers schedulers;
             FilesystemTable filesystem_table;
+            Interpreters interpreters;
 
             void boot();
     };
