@@ -28,7 +28,7 @@ namespace kernel {
             Process(std::string name);
 
             ProcessState get_state();
-            const pid_t get_pid();
+            pid_t get_pid();
             const std::string get_name();
             std::shared_ptr<const argv_t> get_argv();
             void set_argv(std::shared_ptr<argv_t> argv);

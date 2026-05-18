@@ -14,7 +14,7 @@ ProcessState Process::get_state() {
     return _state;
 }
 
-const kernel::pid_t Process::get_pid() {
+kernel::pid_t Process::get_pid() {
     return _pid;
 }
 

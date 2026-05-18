@@ -74,7 +74,7 @@ namespace kernel {
             File(std::shared_ptr<Filesystem> filesystem, const path_t path, FileMode mode);
 
             fd_t get_file_descriptor();
-            const FileMode get_mode();
+            FileMode get_mode();
             size_t get_offset();
             void set_offset(size_t offset);
             size_t increment_offset(size_t count, bool writing = false);

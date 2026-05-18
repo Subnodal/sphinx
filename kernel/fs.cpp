@@ -82,7 +82,7 @@ fd_t File::get_file_descriptor() {
     return _file_descriptor;
 }
 
-const FileMode File::get_mode() {
+FileMode File::get_mode() {
     return _mode;
 }
 
