@@ -55,7 +55,7 @@ namespace kernel {
 
         private:
             std::vector<std::shared_ptr<Process>> _processes;
-            pid_t _next_pid = 0;
+            pid_t _next_pid = 1;
     };
 
     class Schedulers {
